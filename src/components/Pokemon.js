@@ -9,7 +9,6 @@ const Pokemon = (props) => {
         axios
             .get(props.url)
             .then(res => {
-               
                 setPokemon(res.data);
                 res.data.types.forEach(type => {
                     types = type

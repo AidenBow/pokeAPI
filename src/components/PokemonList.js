@@ -3,7 +3,7 @@ import {connect} from "react-redux"
 
 import Pokemon from "./Pokemon"
 import {fetchPokemon, nextPokemon} from "../actions/actions"
-
+import { Button } from 'semantic-ui-react'
 const PokemonList = (props) => {
     const [key, setKey] = useState("")
     useEffect(() => {
@@ -15,6 +15,11 @@ const PokemonList = (props) => {
 
     return (
         <div style={{margin: "0 auto"}}>
+            <div style={{display: "flex", justifyContent: "space-between", maxWidth: 900, margin: "0 auto", padding: 20}}>
+                <Button onClick={() => props.nextPokemon(props.lastURL)}> Previous Page </Button>
+                <Button onClick={() => props.nextPokemon(props.nextURL)}> Next Page </Button>
+            </div>
+
             <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly", maxWidth: 930, flexWrap: "wrap", margin: "0 auto"}}>
                 {props.pokemon.map(pokemon => {
                     return <Pokemon  pokemon={pokemon} url={pokemon.url} />
@@ -22,9 +27,9 @@ const PokemonList = (props) => {
 
                 
             </div>
-            <div style={{display: "flex", justifyContent: "space-evenly", maxWidth: 300, margin: "0 auto"}}>
-                <button onClick={() => props.nextPokemon(props.lastURL)}> Previous Page </button>
-                <button onClick={() => props.nextPokemon(props.nextURL)}> Next Page </button>
+            <div style={{display: "flex", justifyContent: "space-between", maxWidth: 500, margin: "0 auto"}}>
+                <Button onClick={() => props.nextPokemon(props.lastURL)}> Previous Page </Button>
+                <Button onClick={() => props.nextPokemon(props.nextURL)}> Next Page </Button>
             </div>
         </div>
         
