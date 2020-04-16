@@ -24,8 +24,8 @@ const PokemonList = (props) => {
                 
             </div>
             <div style={{display: "flex", justifyContent: "space-evenly", width: 300, margin: "0 auto"}}>
-                <button onClick={() => props.nextPokemon(props.lastURL)}> {backArrow} </button>
-                <button onClick={() => props.nextPokemon(props.nextURL)}> > </button>
+                <button onClick={() => props.nextPokemon(props.lastURL)}> Previous Page </button>
+                <button onClick={() => props.nextPokemon(props.nextURL)}> Next Page </button>
             </div>
         </div>
         
