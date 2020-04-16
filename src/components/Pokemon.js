@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 const Pokemon = (props) => {
     const [pokemon, setPokemon] = useState("")
@@ -17,8 +18,12 @@ const Pokemon = (props) => {
 
     return(
         <div>
-            <p>{pokemon.name}</p>
-            {pokemon.sprites && pokemon.sprites.front_shiny && <img src={pokemon.sprites.front_shiny} alt="pokemon"></img>}
+            <Card>
+            
+            
+            {pokemon.sprites && pokemon.sprites.front_default && <Image src={pokemon.sprites.front_default} alt="pokemon" wrapped ui={false} ></Image>}
+            <Card.Content>{pokemon.name}</Card.Content>
+            </Card>
         </div>
     )
 

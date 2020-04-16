@@ -16,7 +16,7 @@ const PokemonList = (props) => {
 
     return (
         <div>
-            <div style={{display: "flex", flexDirection: "row", width: 600, flexWrap: "wrap", margin: "0 auto"}}>
+            <div style={{display: "flex", flexDirection: "row", width: 900, flexWrap: "wrap", margin: "0 auto"}}>
                 {props.pokemon.map(pokemon => {
                     return <Pokemon pokemon={pokemon} url={pokemon.url}/>
                 })}
